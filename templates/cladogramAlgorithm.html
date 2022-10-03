@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Cladogram Generator</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+	</script>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand active" href="/">Cladogram Generator</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a href="generate">Generate</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container">
+		<h1>Cladogram Generator Algorithm</h1>
+		<hr>
+		<form method="POST" action="">
+			<input id="csrf_token" name="csrf_token" type="hidden" value="ImJkOGFjMzkzYmU4NjFmMDExOGVlNjU5MWNjZGRjMDNmMTk1ODlkYWEi.YVMUBQ.JFvKQBH11LFyiDZlCip5Juutpuw">
+    <div class="form-group">
+        <h3>Table Dimensions</h3>
+        <hr>
+        <label class="form-control-label" for="columns">Columns(Number of Derived Characteristics): </label>
+        <input class="form-control form-control-lg" id="columns" name="columns" required="" type="text" value="2" onchange="updateTable()">
+        <label class="form-control-label" for="rows">Rows(Number of Species): </label>
+        <input class="form-control form-control-lg" id="rows" name="rows" required="" type="text" value="3" onchange="updateTable()" style="margin-bottom: 30px;">
+        <h3>Data Table:</h3>
+        <hr>
+        <h4>Instructions:</h4>
+        <ul style="margin-bottom: 30px;">
+          <li>
+            Empty(''): Indicates that the given species does not have the given characteristic EVER
+          </li>
+          <li>
+            True('T'): Indicates that the given species has the given characteristic CURRENTLY
+          </li>
+          <li>
+            Replaced('R'): Indicates that the given species HAD the given characteristic, but was REPLACED by another characteristic. This other characteristic likely evolved from the given characteristic.
+          </li>
+          <li>
+            Lost('L'): Indicates that the given species HAD the given characteristic, but was LOST through the cladogram.
+          </li>
+        </ul>
+        <table class="table" id="table">
+        </table>
+    </div>
+    <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Submit">
+  </form>
+  {% if submitted %}
+  <center>
+    <img src={{url_for('static', filename='mytree.png')}} alt="Phylogenetic Tree Image Supposed to be Here" style = "width: 600px;">
+  </center>
+  {% endif %}
+</div>
+<script>
+  function updateTable() {
+    var rows = document.getElementById("rows").value;
+    var columns = document.getElementById("columns").value;
+    //Update Table
+    var table = document.createElement("table");
+    table.classList.add("table");
+    var thead = document.createElement("thead");
+    thead.appendChild(document.createElement("th"));
+    for (let i = 0; i < columns; i++) {
+      var th=document.createElement("th");
+      th.scope = "col";
+      th.innerHTML = '<input class="form-control" id="dc_'+ i + '" name="dc_'+ i + '"+ placeholder="DC '+(i+1)+'" value="DC '+(i+1)+'">';
+      thead.appendChild(th);
+    }
+    table.appendChild(thead);
+    var tbody = document.createElement("tbody");
+    for (let i = 0; i < rows; i++) {
+      var tr=document.createElement("tr");
+      var th=document.createElement("th");
+      th.scope = "row";
+      th.innerHTML = '<input class="form-control" id="species_'+ i + '" name="species_'+ i + '" placeholder="Species '+(i+1)+'" value="Species '+(i+1)+'">';
+      tr.appendChild(th);
+      for (let j = 0; j < columns; j++) {
+        var td=document.createElement("td");
+        td.innerHTML = '<select class="form-control" id="data_'+ i + '_'+ j +'" name="data_'+ i + '_'+ j +'"><option value=" "></option><option value="T">True</option><option value="R">Replaced</option><option value="L">Lost</option></select';
+        tr.appendChild(td);
+      }
+      tbody.appendChild(tr);
+    }
+    table.appendChild(tbody);
+    table.id = "table"
+    document.getElementById("table").replaceWith(table);
+  }
+  updateTable();
+</script>
+</body>
+</html> <W></W>
