@@ -1,22 +1,19 @@
 i=0
-Branch(id=<CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7ff3799699a0>, species: None, derivedCharacteristic: [], currentDerivedCharacteristic: [], branches: [<CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7ff379969880>, <CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7ff379969bb0>, <CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7ff379969b80>, <CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7ff379969b50>, <CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7ff379969b20>, <CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7ff379969a90>, <CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7ff379969be0>])
+Branch(id=<CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7f5aad63fa90>, species: None, derivedCharacteristic: [], currentDerivedCharacteristic: [], branches: [<CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7f5aad63f6d0>, <CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7f5aad63fb20>])
 
 
 
 i=1
-Branch(id=<CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7ff379969880>, species: Species 1, derivedCharacteristic: [], currentDerivedCharacteristic: [], branches: [])
+Branch(id=<CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7f5aad63f6d0>, species: Species 1, derivedCharacteristic: [], currentDerivedCharacteristic: [], branches: [])
 
-Branch(id=<CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7ff379969bb0>, species: Species 2, derivedCharacteristic: [], currentDerivedCharacteristic: [], branches: [])
+Branch(id=<CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7f5aad63fb20>, species: None, derivedCharacteristic: ['DC 1', 'DC 2'], currentDerivedCharacteristic: ['DC 1', 'DC 2'], branches: [<CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7f5aad63f940>, <CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7f5aad63f970>])
 
-Branch(id=<CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7ff379969b80>, species: Species 3, derivedCharacteristic: [], currentDerivedCharacteristic: [], branches: [])
 
-Branch(id=<CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7ff379969b50>, species: Species 4, derivedCharacteristic: [], currentDerivedCharacteristic: [], branches: [])
 
-Branch(id=<CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7ff379969b20>, species: Species 5, derivedCharacteristic: [], currentDerivedCharacteristic: [], branches: [])
+i=2
+Branch(id=<CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7f5aad63f940>, species: Species 3, derivedCharacteristic: [], currentDerivedCharacteristic: ['DC 1', 'DC 2'], branches: [])
 
-Branch(id=<CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7ff379969a90>, species: Species 6, derivedCharacteristic: [], currentDerivedCharacteristic: [], branches: [])
-
-Branch(id=<CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7ff379969be0>, species: Species 7, derivedCharacteristic: [], currentDerivedCharacteristic: [], branches: [])
+Branch(id=<CladogramGeneratorAlgorithm.generatePhlyogeneticTree.<locals>.EvoBranch object at 0x7f5aad63f970>, species: Species 2, derivedCharacteristic: ['Loss of DC 2'], currentDerivedCharacteristic: ['DC 1', 'DC 2', 'Loss of DC 2'], branches: [])
 
 
 
